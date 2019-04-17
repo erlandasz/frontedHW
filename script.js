@@ -2,18 +2,19 @@ function Search(querySelectorInput, querySelectorOutput) {
     
     var input, 
         output,
-        self = this;
+        value;
 
-    this.updateOutput = function(event) {
-        console.log(input.value);
-        output.innerHTML = input.value
+    function updateOutput(event) {
+        value = input.value;
+        console.log(value);
+        output.innerHTML = value;
     }
 
-    this.init = function() {
+    function init() {
         input = document.querySelector(querySelectorInput);
         output = document.querySelector(querySelectorOutput);
         console.log('running init', input, output);
-        input.addEventListener('keyup', self.updateOutput);
+        input.addEventListener('keyup', updateOutput);
     }
 
 }
